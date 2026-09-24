@@ -12,7 +12,7 @@
 <meta property="og:description" content="Apps and software for businesses and the people they serve.">
 <meta property="og:url" content="https://lemontholdings.com/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Lemont Holdings LLC","url":"https://lemontholdings.com/","logo":"https://lemontholdings.com/favicon.svg","email":"support@lemontholdings.com","telephone":"+1-737-228-3375","address":{"@type":"PostalAddress","streetAddress":"17350 State Hwy 249 Ste 220 #35105","addressLocality":"Houston","addressRegion":"TX","postalCode":"77064","addressCountry":"US"}}
+{"@context":"https://schema.org","@type":"Organization","name":"Lemont Holdings LLC","url":"https://lemontholdings.com/","logo":"https://lemontholdings.com/logo.svg","email":"support@lemontholdings.com","telephone":"+1-737-228-3375","address":{"@type":"PostalAddress","streetAddress":"17350 State Hwy 249 Ste 220 #35105","addressLocality":"Houston","addressRegion":"TX","postalCode":"77064","addressCountry":"US"}}
 </script>
 <style>
 :root{
@@ -41,7 +41,7 @@ a{color:inherit}
 
 header{display:flex;align-items:center;justify-content:space-between;padding:20px 0;position:relative;z-index:3}
 .brand{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-weight:700;letter-spacing:2px;font-size:14px;text-decoration:none}
-.brand svg{width:34px;height:34px;filter:drop-shadow(0 0 10px rgba(0,229,255,.45))}
+.brand img{width:38px;height:38px;filter:drop-shadow(0 0 10px rgba(111,227,255,.45))}
 nav a{font-family:var(--mono);color:var(--muted);text-decoration:none;margin-left:24px;font-size:13px;letter-spacing:1px;text-transform:uppercase}
 nav a:hover{color:var(--cyan)}
 
@@ -129,7 +129,7 @@ footer a:hover{color:var(--cyan)}
 <div class="wrap">
 <header>
   <a class="brand" href="/">
-    <svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00E5FF"/><stop offset="1" stop-color="#7C4DFF"/></linearGradient></defs><path d="M32 6 54 19v26L32 58 10 45V19Z" fill="#05060A" stroke="url(#lg)" stroke-width="3.5"/><path d="M26 20v24h14" fill="none" stroke="url(#lg)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <img src="/logo.svg" alt="" width="38" height="38">
     LEMONT HOLDINGS
   </a>
   <nav><a href="#apps">Apps</a><a href="#build">Build</a><a href="#contact">Contact</a></nav>
@@ -157,7 +157,7 @@ footer a:hover{color:var(--cyan)}
   <div class="apps">
     <article class="app reveal" style="--accent:#39FF14">
       <div class="shine"></div>
-      <div class="app-top"><img src="https://margenos.com/icon-192.png" alt="Margenos app icon"><div><h3>Margenos</h3><div class="chip">B2B · Walmart seller tool</div></div></div>
+      <div class="app-top"><img src="data:image/webp;base64,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" alt="Margenos app icon"><div><h3>Margenos</h3><div class="chip">B2B · Walmart seller tool</div></div></div>
       <p>Profit, ROI, Walmart referral and WFS fees, sellers, stock and sales history for any Walmart product. Chrome extension plus an iPhone and Android barcode scanner.</p>
       <div class="links"><a class="btn primary" href="https://margenos.com">margenos.com</a><a class="btn" href="https://margenos.com/privacy/">Privacy</a></div>
     </article>
