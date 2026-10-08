@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lemont Holdings LLC · Apps and software</title>
-<meta name="description" content="Lemont Holdings LLC is a Texas software company building B2B and B2C apps and software, including Margenos, Sudgo and Sudgo Pro.">
+<meta name="description" content="Lemont Holdings LLC is a Texas software company building B2B and B2C apps and software, including Margenos, Sudgo, Sudgo Pro and Come Through Media.">
 <link rel="canonical" href="https://lemontholdings.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#05060A">
@@ -73,7 +73,7 @@ h2{font-size:clamp(28px,4vw,42px);letter-spacing:-1px;margin:10px 0 10px}
 .sub{color:var(--muted);margin:0 0 36px;max-width:620px}
 
 /* 3D tilt cards */
-.apps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;perspective:1200px}
+.apps{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;perspective:1200px}
 .app{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:16px;
   transform-style:preserve-3d;transition:transform .18s ease-out,border-color .2s;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);will-change:transform}
 .app::before{content:"";position:absolute;inset:-1px;border-radius:22px;padding:1px;background:linear-gradient(135deg,var(--accent,var(--cyan)),transparent 40%,transparent 60%,var(--violet));
@@ -110,6 +110,119 @@ footer a:hover{color:var(--cyan)}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 
+
+/* ===== build film (scroll-driven intro) ===== */
+.film{position:relative;height:420vh;z-index:2}
+.film .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.film .box{position:absolute;left:0;top:0;width:1200px;height:700px;transform-origin:0 0}
+.film.portrait .box{width:720px;height:1280px}
+.fhead{position:absolute;left:0;right:0;top:0;z-index:6;display:flex;align-items:center;justify-content:space-between;padding:18px clamp(16px,4vw,40px)}
+.film .intro{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;z-index:5;width:min(92vw,900px);pointer-events:none}
+.film .intro h1{margin:18px 0 10px}
+.film .hint{font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--dim);text-transform:uppercase;margin-top:26px}
+.film .hint i{display:block;width:1px;height:42px;margin:12px auto 0;background:linear-gradient(var(--cyan),transparent);animation:drip 1.6s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.film .final{position:absolute;inset:0;z-index:5;display:flex;align-items:center;padding:0 clamp(20px,6vw,90px);pointer-events:none;opacity:0}
+.film .final .in{max-width:560px;pointer-events:auto}
+.film .final .lead{margin-bottom:26px}
+.film.portrait .final{align-items:flex-start;padding-top:90px}
+.win{position:absolute;border:1px solid var(--line2);border-radius:14px;background:rgba(8,11,20,.92);box-shadow:0 30px 80px -20px rgba(0,0,0,.8),0 0 40px rgba(0,229,255,.08);overflow:hidden}
+.win .bar{height:30px;display:flex;align-items:center;gap:7px;padding:0 12px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--dim)}
+.win .bar i{width:10px;height:10px;border-radius:50%;background:#2a3147}
+.win .bar i:nth-child(1){background:#FF5F57}.win .bar i:nth-child(2){background:#FEBC2E}.win .bar i:nth-child(3){background:#28C840}
+.win .bar span{margin-left:10px}
+#ed{left:50px;top:110px;width:540px;height:480px}
+.film.portrait #ed{left:30px;top:60px;width:660px;height:420px}
+#code{font-family:var(--mono);font-size:15px;line-height:1.7;padding:16px 18px;white-space:pre;color:var(--text);margin:0;min-height:300px}
+.film.portrait #code{font-size:16px;min-height:260px}
+#code .k{color:#C792EA}#code .s{color:#7FE3A6}#code .c{color:var(--dim)}#code .f{color:var(--cyan)}#code .n{color:#FFB86C}
+#code .cur{display:inline-block;width:8px;height:17px;background:var(--cyan);vertical-align:-3px;animation:blink 1s steps(1) infinite}
+#log{position:absolute;left:0;right:0;bottom:0;border-top:1px solid var(--line);padding:10px 18px;font-family:var(--mono);font-size:13px;line-height:1.75;background:rgba(0,0,0,.35);height:118px}
+#log div{opacity:0;transform:translateX(-8px);transition:.3s}
+#log div.on{opacity:1;transform:none}
+#log .ok{color:#28C840}#log .up{color:var(--cyan)}#log .lv{color:#FF3DDB}
+#lap{left:600px;top:150px;width:560px;height:360px}
+.film.portrait #lap{left:40px;top:560px;width:640px;height:380px}
+#lap .dash{position:absolute;inset:30px 0 0 0;padding:18px;display:grid;grid-template-columns:120px 1fr;gap:16px}
+#lap .side{display:flex;flex-direction:column;gap:10px}
+#lap .side b{height:10px;border-radius:5px;background:rgba(124,77,255,.35);transform-origin:left}
+#lap .main{display:flex;flex-direction:column;gap:14px}
+#lap .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+#lap .kpi{border:1px solid var(--line);border-radius:10px;padding:10px;font-family:var(--mono);font-size:11px;color:var(--dim)}
+#lap .kpi b{display:block;font-size:20px;color:var(--text);margin-top:4px}
+#lap .chart{flex:1;display:flex;align-items:flex-end;gap:8px;border:1px solid var(--line);border-radius:10px;padding:12px}
+#lap .chart i{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(var(--cyan),#4D8BFF);transform-origin:bottom}
+#ph{position:absolute;left:830px;top:40px;width:300px;height:620px}
+.film.portrait #ph{left:210px;top:600px;width:300px;height:620px}
+#ph svg.frame{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+#ph svg.frame path,#ph svg.frame rect{fill:none;stroke:var(--cyan);stroke-width:2;filter:drop-shadow(0 0 6px rgba(0,229,255,.7))}
+#ph .scr{position:absolute;left:14px;top:14px;right:14px;bottom:14px;border-radius:36px;overflow:hidden;background:var(--b0,#0B1220);transition:background .4s}
+#ph .scr::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 60% at 50% 0,var(--b1,#1d3b8a),transparent 70%);opacity:.7;transition:.4s}
+#ph .isl{position:absolute;left:50%;top:10px;width:86px;height:24px;margin-left:-43px;border-radius:14px;background:#000;z-index:3}
+.pc{position:absolute;left:16px;right:16px;border-radius:14px;will-change:transform,opacity}
+.pc.hd{top:48px;height:46px;display:flex;align-items:center;gap:10px;padding:0 4px;color:#fff;font-weight:800;font-size:19px;letter-spacing:-.3px}
+.pc.hd .lg{width:34px;height:34px;border-radius:10px;background:var(--ac,#3B82F6);box-shadow:0 0 18px var(--ac)}
+.pc.hero{top:104px;height:170px;background:linear-gradient(150deg,var(--ac,#3B82F6),rgba(255,255,255,.04));padding:16px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end}
+.pc.hero small{font-family:var(--mono);font-size:10px;letter-spacing:2px;opacity:.85}
+.pc.hero b{font-size:21px;line-height:1.15;margin-top:4px}
+.pc.c1,.pc.c2{top:286px;height:96px;right:auto;width:calc(50% - 22px);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);padding:12px;color:#cfd8ee;font-size:11px;font-family:var(--mono)}
+.pc.c2{left:auto;right:16px}
+.pc.c1 b,.pc.c2 b{display:block;font-size:20px;color:#fff;font-family:-apple-system,Segoe UI,sans-serif;margin-top:6px}
+.pc.ls{top:394px;height:92px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);padding:12px;display:flex;flex-direction:column;gap:9px}
+.pc.ls i{height:9px;border-radius:5px;background:rgba(255,255,255,.18)}.pc.ls i:nth-child(2){width:70%}.pc.ls i:nth-child(3){width:45%}
+.pc.btn{top:500px;height:52px;background:var(--ac,#3B82F6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;letter-spacing:1.5px;font-size:13px;box-shadow:0 10px 30px -8px var(--ac)}
+.live{position:absolute;top:-16px;right:-20px;z-index:4;font-family:var(--mono);font-weight:800;font-size:13px;letter-spacing:2px;color:#021018;background:linear-gradient(90deg,#39FF14,var(--cyan));padding:8px 14px;border-radius:999px;box-shadow:0 0 30px rgba(57,255,20,.5);transform:scale(0)}
+.tag{position:absolute;font-family:var(--mono);font-size:12px;color:var(--cyan);border:1px solid var(--line2);background:rgba(0,229,255,.06);padding:5px 10px;border-radius:7px;opacity:0;white-space:nowrap}
+.ctm-ico{width:66px;height:66px;border-radius:16px;flex:none}
+
+/* real-site layer inside laptop */
+#lap .site{position:absolute;inset:30px 0 0 0;overflow:hidden;opacity:0;background:#000}
+#lap .site img{position:absolute;left:0;top:0;width:100%;display:block;opacity:0;transition:opacity .35s;will-change:transform}
+#lap .site img.on{opacity:1}
+#lap .url{font-family:var(--mono)}
+/* code background */
+#codebg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.55}
+/* live work showcase */
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.shot{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card);transition:transform .25s,border-color .25s,box-shadow .25s}
+.shot:hover{transform:translateY(-6px);border-color:var(--line2);box-shadow:0 20px 60px -20px rgba(0,229,255,.35)}
+.shot .bar{height:34px;display:flex;align-items:center;gap:7px;padding:0 12px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11.5px;color:var(--muted);background:rgba(0,0,0,.35)}
+.shot .bar i{width:9px;height:9px;border-radius:50%;background:#2a3147}
+.shot .bar i:nth-child(1){background:#FF5F57}.shot .bar i:nth-child(2){background:#FEBC2E}.shot .bar i:nth-child(3){background:#28C840}
+.shot .bar span{margin-left:8px;flex:1;background:rgba(255,255,255,.05);border-radius:6px;padding:4px 10px}
+.shot .view{position:relative;height:380px;overflow:hidden;background:#000}
+.shot .view img{width:100%;display:block;animation:scrollsite var(--d,26s) ease-in-out infinite alternate}
+.shot:hover .view img{animation-play-state:paused}
+@keyframes scrollsite{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(calc(-100% + 380px))}}
+.shot .meta{padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.shot .meta b{font-size:16px}.shot .meta span{font-family:var(--mono);font-size:11px;color:var(--cyan);letter-spacing:1px;text-transform:uppercase}
+
+/* capability cards with photos */
+.caps.pics{grid-template-columns:repeat(2,1fr);gap:20px}
+.caps.pics .cap{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.cap .ph{position:relative;aspect-ratio:16/9;overflow:hidden;background:#0a0c14}
+.cap .ph img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.04);transition:transform 1.2s ease}
+.cap:hover .ph img{transform:scale(1.1)}
+.cap .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(5,6,10,.85))}
+.cap .ph .ic{position:absolute;left:16px;bottom:12px;z-index:1;margin:0;background:rgba(5,6,10,.6);backdrop-filter:blur(6px)}
+.cap .bd{padding:18px 20px 22px}
+.cap ul{margin:10px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.cap li{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+/* studio / process */
+.studio{display:grid;grid-template-columns:1.05fr 1fr;gap:34px;align-items:center}
+.studio .pic{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10}
+.studio .pic img{width:100%;height:100%;object-fit:cover;display:block}
+.studio .pic .chip2{position:absolute;left:16px;top:16px;font-family:var(--mono);font-size:12px;color:#021018;background:linear-gradient(90deg,#39FF14,var(--cyan));padding:6px 12px;border-radius:999px;font-weight:700}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;counter-reset:s}
+.steps li{position:relative;padding:14px 14px 14px 58px;border:1px solid var(--line);border-radius:14px;background:rgba(10,12,20,.6)}
+.steps li::before{counter-increment:s;content:"0" counter(s);position:absolute;left:16px;top:14px;font-family:var(--mono);color:var(--cyan);font-weight:700}
+.steps b{display:block;font-size:16px}.steps span{color:var(--muted);font-size:14px}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.nums div{border:1px solid var(--line);border-radius:16px;padding:18px;background:rgba(10,12,20,.6);font-family:var(--mono)}
+.nums b{display:block;font-size:30px;background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.nums span{font-size:11px;letter-spacing:1px;color:var(--dim);text-transform:uppercase}
+@media (max-width:900px){.caps.pics{grid-template-columns:1fr}.studio{grid-template-columns:1fr}.nums{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){.work{grid-template-columns:1fr}.shot .view{height:420px}@keyframes scrollsite{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(calc(-100% + 420px))}}}
 @media (max-width:900px){
   .hero{grid-template-columns:1fr;min-height:auto;padding-top:10px}
   #scene{position:relative;right:auto;top:auto;transform:none;width:100%;height:340px;min-height:0;order:-1;margin-bottom:-20px}
@@ -119,41 +232,87 @@ footer a:hover{color:var(--cyan)}
   nav a{margin-left:14px}
 }
 @media (max-width:520px){.caps{grid-template-columns:1fr} nav a:not(:last-child){display:none} .stats{gap:18px}}
-@media (prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.film{height:auto}.film .stage{position:relative}*,*::before{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
+<canvas id="codebg" aria-hidden="true"></canvas>
 <div class="grid-floor" aria-hidden="true"></div>
 <div class="glow a" aria-hidden="true"></div><div class="glow b" aria-hidden="true"></div>
 
-<div class="wrap">
-<header>
-  <a class="brand" href="/">
-    <img src="/logo.svg" alt="" width="38" height="38">
-    LEMONT HOLDINGS
-  </a>
-  <nav><a href="#apps">Apps</a><a href="#build">Build</a><a href="#contact">Contact</a></nav>
-</header>
+<div class="film" id="film">
+  <div class="stage">
+    <div class="fhead">
+      <a class="brand" href="/"><img src="/logo.svg" alt="" width="38" height="38">LEMONT HOLDINGS</a>
+      <nav><a href="#apps">Apps</a><a href="#work">Work</a><a href="#build">Build</a><a href="#contact">Contact</a></nav>
+    </div>
 
-<section class="hero">
-  <canvas id="scene" aria-hidden="true"></canvas>
-  <div class="hero-copy">
-    <span class="term"><span class="dot"></span>&gt; initializing the future<span class="caret"></span></span>
-    <h1>Apps and software for businesses <span class="grad">and the people they serve.</span></h1>
-    <p class="lead">Lemont Holdings LLC is a Texas software company. We design, build and run our own apps and software, B2B and B2C: tools that help businesses work smarter, and apps that make everyday services easy. We also take part in e-commerce ourselves.</p>
-    <div class="cta"><a class="btn primary" href="#apps">See our apps →</a><a class="btn" href="#contact">Contact us</a></div>
-    <div class="stats">
-      <div><b>3</b><span>Live apps</span></div>
-      <div><b>B2B + B2C</b><span>Software</span></div>
-      <div><b>TX</b><span>Based</span></div>
+    <div class="box" id="box" aria-hidden="true">
+      <div class="win" id="lap">
+        <div class="bar"><i></i><i></i><i></i><span class="url" id="lurl">dashboard.lemontholdings.app</span></div>
+        <div class="dash">
+          <div class="side"><b></b><b style="width:80%"></b><b style="width:60%"></b><b style="width:90%"></b><b style="width:70%"></b></div>
+          <div class="main">
+            <div class="kpis"><div class="kpi">USERS<b id="k1">0</b></div><div class="kpi">ORDERS<b id="k2">0</b></div><div class="kpi">UPTIME<b id="k3">0%</b></div></div>
+            <div class="chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+        <div class="site" id="lsite"><img src="img/sudgo.webp" alt="" data-k="0"><img src="img/margenos.webp" alt="" data-k="1"><img src="img/comethroughmedia.webp" alt="" data-k="3"></div>
+      </div>
+
+      <div class="win" id="ed">
+        <div class="bar"><i></i><i></i><i></i><span id="fname">~/lemont/app.ts</span></div>
+        <pre id="code"></pre>
+        <div id="log">
+          <div class="ok">✓ compiled 214 files</div>
+          <div class="ok">✓ tests passed 48/48</div>
+          <div class="up">↑ deploying to iOS · Android · web</div>
+          <div class="lv">● live in production</div>
+        </div>
+      </div>
+
+      <div id="ph">
+        <svg class="frame" viewBox="0 0 300 620" preserveAspectRatio="none"><rect id="frameR" x="2" y="2" width="296" height="616" rx="46" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>
+        <div class="scr" id="scr">
+          <div class="isl"></div>
+          <div class="pc hd"><span class="lg"></span><span id="bname">Sudgo</span></div>
+          <div class="pc hero"><small id="bkick">ON-DEMAND CLEANING</small><b id="bline">Book a cleaner in about a minute.</b></div>
+          <div class="pc c1"><span id="c1l">ETA</span><b id="c1v">12 min</b></div>
+          <div class="pc c2"><span id="c2l">PRICE</span><b id="c2v">$89</b></div>
+          <div class="pc ls"><i></i><i></i><i></i></div>
+          <div class="pc btn" id="bbtn">BOOK NOW</div>
+        </div>
+        <div class="live" id="live">● LIVE</div>
+      </div>
+
+      <div class="tag" id="t1" style="left:640px;top:70px">&lt;design/&gt;</div>
+      <div class="tag" id="t2" style="left:620px;top:560px">&lt;api/&gt;</div>
+      <div class="tag" id="t3" style="left:1100px;top:600px">&lt;ai/&gt;</div>
+    </div>
+
+    <div class="intro" id="intro">
+      <span class="term"><span class="dot"></span>&gt; lemont build<span class="caret"></span></span>
+      <h1>We build <span class="grad">software.</span></h1>
+      <p class="lead" style="margin:0 auto">Scroll to watch an app get made.</p>
+      <div class="hint">Scroll<i></i></div>
+    </div>
+
+    <div class="final" id="final">
+      <div class="in">
+        <span class="term"><span class="dot"></span>&gt; shipped<span class="caret"></span></span>
+        <h1>Apps and software for businesses <span class="grad">and the people they serve.</span></h1>
+        <p class="lead">Lemont Holdings LLC is a Texas software company. We design, build and run our own apps, software and brands, B2B and B2C: tools that help businesses work smarter, and apps that make everyday services easy.</p>
+        <div class="cta"><a class="btn primary" href="#apps">See our brands →</a><a class="btn" href="#contact">Contact us</a></div>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
+<div class="wrap">
 <section id="apps">
   <div class="label reveal">// 01 · Products</div>
-  <h2 class="reveal">Our apps</h2>
-  <p class="sub reveal">Business tools and consumer apps, all built and run by Lemont Holdings LLC.</p>
+  <h2 class="reveal">Our apps &amp; brands</h2>
+  <p class="sub reveal">Business tools, consumer apps and services, all built and run by Lemont Holdings LLC.</p>
   <div class="apps">
     <article class="app reveal" style="--accent:#39FF14">
       <div class="shine"></div>
@@ -173,23 +332,61 @@ footer a:hover{color:var(--cyan)}
       <p>The app for Sudgo cleaners. Set your own schedule, take cleaning jobs near you and get paid weekly.</p>
       <div class="links"><a class="btn primary" href="https://apps.apple.com/us/app/sudgo-pro-cleaner-app/id6762576741">App Store</a><a class="btn" href="https://getsudgo.com">getsudgo.com</a></div>
     </article>
+    <article class="app reveal" style="--accent:#E2364A">
+      <div class="shine"></div>
+      <div class="app-top"><svg class="ctm-ico" viewBox="0 0 64 64" role="img" aria-label="Come Through Media icon" style="box-shadow:0 12px 30px rgba(0,0,0,.6),0 0 24px rgba(226,54,74,.35)"><rect width="64" height="64" rx="15" fill="#0B0B0D"/><rect x="18" y="12" width="28" height="40" rx="2" fill="none" stroke="#F4EEE3" stroke-width="2"/><path d="M32 12v40" stroke="#F4EEE3" stroke-width="1.5"/><rect x="18" y="12" width="28" height="40" rx="2" fill="#C21F32" opacity=".55"/><text x="32" y="60" text-anchor="middle" font-family="Georgia,serif" font-size="6.5" fill="#F4EEE3" letter-spacing=".5">COME THROUGH</text></svg><div><h3>Come Through Media</h3><div class="chip">B2B · Websites &amp; marketing</div></div></div>
+      <p>Websites, walk-in video and local marketing for Austin-area restaurants, barbershops and shops. We build the site, host it and get it ranking on Google.</p>
+      <div class="links"><a class="btn primary" href="https://comethroughmedia.com">comethroughmedia.com</a><a class="btn" href="sms:+17372283375">Text us</a></div>
+    </article>
+  </div>
+</section>
+
+<section id="work">
+  <div class="label reveal">// 02 · Live work</div>
+  <h2 class="reveal">Real sites. Running right now.</h2>
+  <p class="sub reveal">These are live. Hover to stop the scroll, click to visit.</p>
+  <div class="work">
+    <a class="shot reveal" href="https://getsudgo.com" target="_blank" rel="noopener" style="--d:24s"><div class="bar"><i></i><i></i><i></i><span>getsudgo.com</span></div><div class="view"><img src="img/sudgo.webp" alt="The Sudgo website, scrolling" loading="lazy"></div><div class="meta"><b>Sudgo</b><span>B2C · Cleaning</span></div></a>
+    <a class="shot reveal" href="https://margenos.com" target="_blank" rel="noopener" style="--d:28s"><div class="bar"><i></i><i></i><i></i><span>margenos.com</span></div><div class="view"><img src="img/margenos.webp" alt="The Margenos website, scrolling" loading="lazy"></div><div class="meta"><b>Margenos</b><span>B2B · Seller tool</span></div></a>
+    <a class="shot reveal" href="https://comethroughmedia.com" target="_blank" rel="noopener" style="--d:30s"><div class="bar"><i></i><i></i><i></i><span>comethroughmedia.com</span></div><div class="view"><img src="img/comethroughmedia.webp" alt="The Come Through Media website, scrolling" loading="lazy"></div><div class="meta"><b>Come Through Media</b><span>Websites · Marketing</span></div></a>
   </div>
 </section>
 
 <section id="build">
-  <div class="label reveal">// 02 · What we build</div>
+  <div class="label reveal">// 03 · What we build</div>
   <h2 class="reveal">From idea to app store.</h2>
   <p class="sub reveal">We design, build and operate every product ourselves, from the backend to the app you tap.</p>
-  <div class="caps">
-    <div class="cap reveal"><span class="ic">&lt;mobile/&gt;</span><h4>Mobile apps</h4><p>iPhone and Android apps for customers and for teams in the field.</p></div>
-    <div class="cap reveal"><span class="ic">&lt;web/&gt;</span><h4>Web &amp; extensions</h4><p>Websites, dashboards and Chrome extensions that work where people already are.</p></div>
-    <div class="cap reveal"><span class="ic">&lt;api/&gt;</span><h4>Backend &amp; data</h4><p>Servers, payments and data pipelines that keep everything fast and reliable.</p></div>
-    <div class="cap reveal"><span class="ic">&lt;ai/&gt;</span><h4>AI features</h4><p>Smart search, support and insights built into our products where they help.</p></div>
+  <div class="caps pics">
+    <div class="cap reveal"><div class="ph"><img src="img/build-mobile.webp" alt="A phone running a booking app next to a laptop with code" loading="lazy"><span class="ic">&lt;mobile/&gt;</span></div><div class="bd"><h4>Mobile apps</h4><p>iPhone and Android apps for customers and for teams in the field, from booking and tracking to scanning and payments.</p><ul><li>iOS</li><li>Android</li><li>Push alerts</li><li>Live GPS</li></ul></div></div>
+    <div class="cap reveal"><div class="ph"><img src="img/build-web.webp" alt="An analytics dashboard on a large monitor" loading="lazy"><span class="ic">&lt;web/&gt;</span></div><div class="bd"><h4>Web, dashboards &amp; extensions</h4><p>Websites that rank, admin dashboards that run the business, and Chrome extensions that work where people already are.</p><ul><li>Websites</li><li>Dashboards</li><li>Chrome extensions</li><li>SEO</li></ul></div></div>
+    <div class="cap reveal"><div class="ph"><img src="img/build-backend.webp" alt="Server racks with glowing lights" loading="lazy"><span class="ic">&lt;api/&gt;</span></div><div class="bd"><h4>Backend &amp; data</h4><p>Servers, payments and data pipelines that keep everything fast, secure and reliable, so the app just works.</p><ul><li>APIs</li><li>Stripe payments</li><li>Databases</li><li>Cloud hosting</li></ul></div></div>
+    <div class="cap reveal"><div class="ph"><img src="img/build-ai.webp" alt="An abstract glowing neural network" loading="lazy"><span class="ic">&lt;ai/&gt;</span></div><div class="bd"><h4>AI features</h4><p>Smart search, support and insights built into our products where they actually save people time.</p><ul><li>Assistants</li><li>Smart search</li><li>Forecasting</li><li>Automation</li></ul></div></div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="label reveal">// 04 · How we work</div>
+  <h2 class="reveal">Idea on Monday. In your hand by launch day.</h2>
+  <p class="sub reveal">One team from first sketch to app store, then we keep running it.</p>
+  <div class="studio">
+    <div class="pic reveal"><img src="img/studio.webp" alt="A developer's desk at night with code and app designs on two monitors" loading="lazy"><span class="chip2">● building</span></div>
+    <ol class="steps reveal">
+      <li><b>Design</b><span>Screens, flows and the brand, tested on a real phone first.</span></li>
+      <li><b>Build</b><span>App, website and backend written and tested together.</span></li>
+      <li><b>Ship</b><span>App Store, Google Play, Chrome Web Store and the web.</span></li>
+      <li><b>Run &amp; grow</b><span>Hosting, support, updates and marketing after launch.</span></li>
+    </ol>
+  </div>
+  <div class="nums reveal">
+    <div><b>4</b><span>Brands live</span></div>
+    <div><b>5</b><span>App stores &amp; platforms</span></div>
+    <div><b>B2B+B2C</b><span>Software</span></div>
+    <div><b>TX</b><span>Based</span></div>
   </div>
 </section>
 
 <section id="contact">
-  <div class="label reveal">// 03 · Contact</div>
+  <div class="label reveal">// 05 · Contact</div>
   <h2 class="reveal">Talk to us.</h2>
   <div class="contact">
     <div class="panel reveal code" aria-label="About Lemont Holdings">
@@ -198,6 +395,7 @@ footer a:hover{color:var(--cyan)}
       <div>&nbsp;&nbsp;type: <span class="s">"Texas limited liability company"</span>,</div>
       <div>&nbsp;&nbsp;builds: [<span class="s">"B2B"</span>, <span class="s">"B2C"</span>, <span class="s">"e-commerce"</span>],</div>
       <div>&nbsp;&nbsp;apps: [<span class="s">"Margenos"</span>, <span class="s">"Sudgo"</span>, <span class="s">"Sudgo Pro"</span>],</div>
+      <div>&nbsp;&nbsp;brands: [<span class="s">"Come Through Media"</span>],</div>
       <div>};</div>
       <div class="c">// honest pricing, clear privacy, real support</div>
     </div>
@@ -214,7 +412,7 @@ footer a:hover{color:var(--cyan)}
 
 <footer>
   <div>© 2026 Lemont Holdings LLC. All rights reserved.</div>
-  <div><a href="https://margenos.com/privacy/">Margenos privacy</a><a href="https://margenos.com/terms/">Margenos terms</a></div>
+  <div><a href="https://comethroughmedia.com">Come Through Media</a><a href="https://margenos.com/privacy/">Margenos privacy</a><a href="https://margenos.com/terms/">Margenos terms</a></div>
 </footer>
 </div>
 
@@ -240,69 +438,124 @@ footer a:hover{color:var(--cyan)}
   });
 })();
 </script>
-<script type="module">
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.min.js';
-const canvas=document.getElementById('scene');
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-let renderer;
-try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});}catch(e){canvas.style.display='none';}
-if(renderer){
-  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
-  const scene=new THREE.Scene();
-  const camera=new THREE.PerspectiveCamera(45,1,.1,100);camera.position.set(0,0,9.2);
-  const group=new THREE.Group();scene.add(group);
 
-  // core: glowing wireframe icosahedron + inner solid
-  const ico=new THREE.IcosahedronGeometry(1.35,1);
-  const wire=new THREE.LineSegments(new THREE.WireframeGeometry(ico),new THREE.LineBasicMaterial({color:0x00E5FF,transparent:true,opacity:.85}));
-  group.add(wire);
-  const inner=new THREE.Mesh(new THREE.IcosahedronGeometry(1.0,0),new THREE.MeshBasicMaterial({color:0x7C4DFF,wireframe:true,transparent:true,opacity:.6}));
-  group.add(inner);
 
-  // particle shell (fibonacci sphere)
-  const N=900,R=2.6,pos=new Float32Array(N*3),col=new Float32Array(N*3);
-  const c1=new THREE.Color(0x00E5FF),c2=new THREE.Color(0x7C4DFF),c3=new THREE.Color(0xFF3DDB);
-  for(let i=0;i<N;i++){
-    const y=1-(i/(N-1))*2,r=Math.sqrt(1-y*y),th=Math.PI*(3-Math.sqrt(5))*i,j=R*(0.92+Math.random()*0.16);
-    pos[i*3]=Math.cos(th)*r*j;pos[i*3+1]=y*j;pos[i*3+2]=Math.sin(th)*r*j;
-    const c=c1.clone().lerp(i%3?c2:c3,Math.random()*.8);col.set([c.r,c.g,c.b],i*3);
+<script>
+(function(){
+  var film=document.getElementById('film'),box=document.getElementById('box');
+  var $=function(id){return document.getElementById(id)};
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function c(x){return x<0?0:x>1?1:x}
+  function seg(p,a,b){return c((p-a)/(b-a))}
+  function ease(x){return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2}
+  // code tokens
+  var T=[["c","// lemont build\n"],["k","import"],["",' { app } '],["k","from"],["s",' "@lemont/core"'],["",";\n\n"],
+    ["k","const"],[""," product = "],["f","app"],["","({\n  name: "],["s",'"Sudgo"'],["",",\n  platforms: ["],["s",'"ios"'],["",", "],["s",'"android"'],["",", "],["s",'"web"'],["","],\n  payments: "],["n","true"],["",",\n  ai: "],["n","true"],["",",\n});\n\nproduct."],["f","design"],["","();\nproduct."],["f","build"],["","();\nproduct."],["f","ship"],["","();  "],["c","// → App Store"]];
+  var total=0;T.forEach(function(x){total+=x[1].length});
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+  var lastN=-1;
+  function code(n){if(n===lastN)return;lastN=n;var out='',left=n;
+    for(var i=0;i<T.length&&left>0;i++){var s=T[i][1].slice(0,left);left-=s.length;out+=T[i][0]?'<span class="'+T[i][0]+'">'+esc(s)+'</span>':esc(s)}
+    $('code').innerHTML=out+'<span class="cur"></span>'}
+  var B=[
+    {n:"Sudgo",k:"ON-DEMAND CLEANING",l:"Book a cleaner in about a minute.",a:"#3B82F6",b0:"#08101F",b1:"#1d3b8a",c1:["ETA","12 min"],c2:["PRICE","$89"],btn:"BOOK NOW"},
+    {n:"Margenos",k:"WALMART SELLER TOOL",l:"Profit and ROI on any item, instantly.",a:"#39C514",b0:"#07140A",b1:"#1f5c12",c1:["PROFIT","$14.20"],c2:["ROI","62%"],btn:"SCAN ITEM"},
+    {n:"Sudgo Pro",k:"FOR CLEANERS",l:"Pick up jobs near you. Paid weekly.",a:"#A855F7",b0:"#0E0819",b1:"#4a1f86",c1:["JOBS","6 near"],c2:["THIS WEEK","$640"],btn:"ACCEPT JOB"},
+    {n:"Come Through",k:"WEBSITES & MARKETING",l:"Websites people want to walk into.",a:"#C21F32",b0:"#140A0B",b1:"#5e1720",c1:["CALLS","+38%"],c2:["GOOGLE","#1"],btn:"GET YOUR SITE"}];
+  var curB=-1,scr=$('scr');
+  function brand(i){if(i===curB)return;curB=i;var b=B[i];
+    scr.style.setProperty('--ac',b.a);scr.style.setProperty('--b0',b.b0);scr.style.setProperty('--b1',b.b1);
+    $('bname').textContent=b.n;$('bkick').textContent=b.k;$('bline').textContent=b.l;
+    $('c1l').textContent=b.c1[0];$('c1v').textContent=b.c1[1];$('c2l').textContent=b.c2[0];$('c2v').textContent=b.c2[1];$('bbtn').textContent=b.btn;
+    $('fname').textContent='~/lemont/'+b.n.toLowerCase().replace(/\s+/g,'-')+'.ts'}
+  var pcs=[].slice.call(document.querySelectorAll('.pc'));
+  var from=[[-520,-60,-14],[-640,120,10],[-380,380,-18],[260,-320,16],[-560,520,8],[300,420,-12]];
+  var bars=[].slice.call(document.querySelectorAll('#lap .chart i')),side=[].slice.call(document.querySelectorAll('#lap .side b'));
+  var hts=[.35,.55,.42,.7,.5,.82,.64,.9,.76,1];
+  var logs=[].slice.call(document.querySelectorAll('#log div'));
+  var portrait=false,s=1,vw=0,vh=0;
+  function layout(){vw=innerWidth;vh=innerHeight;portrait=vw/vh<.9;film.classList.toggle('portrait',portrait);
+    var W=portrait?720:1200,H=portrait?1280:700;s=Math.min(vw/W,vh/H)*(portrait?1:.96);
+    box.style.width=W+'px';box.style.height=H+'px';box.dataset.w=W;box.dataset.h=H}
+  function render(p){
+    var W=+box.dataset.w,H=+box.dataset.h;
+    // intro
+    var intro=1-seg(p,.02,.09);$('intro').style.opacity=intro;$('intro').style.transform='translate(-50%,-50%) scale('+(1+.08*(1-intro))+')';
+    var appear=seg(p,.03,.12);
+    // final push
+    var push=ease(seg(p,.80,.95)),fin=seg(p,.86,.97);
+    var sc=s*(1+(portrait?.0:.0)*push);
+    var ox=vw/2-W*sc/2,oy=vh/2-H*sc/2;
+    if(!portrait){ox+= -push*vw*0.0}
+    box.style.transform='translate('+ox+'px,'+oy+'px) scale('+sc+')';
+    box.style.opacity=(appear)*(1-(portrait?.93:.82)*fin);
+    box.style.filter=fin?'blur('+(fin*3)+'px)':'';
+    // editor
+    var ed=$('ed');ed.style.opacity=appear;ed.style.transform='translateY('+(40*(1-appear))+'px) perspective(900px) rotateY('+(portrait?0:8*(1-appear))+'deg)';
+    code(Math.round(total*ease(seg(p,.08,.34))));
+    logs.forEach(function(l,i){l.classList.toggle('on',p>[.44,.52,.6,.7][i])});
+    // laptop
+    var lp=seg(p,.18,.32),lap=$('lap');lap.style.opacity=lp;lap.style.transform='translateY('+(60*(1-lp))+'px) scale('+(.94+.06*lp)+')';
+    var bp=seg(p,.34,.52);bars.forEach(function(b,i){b.style.height=(hts[i]*100*c(bp*1.6-i*.06))+'%'});
+    side.forEach(function(b,i){b.style.transform='scaleX('+c(bp*2-i*.15)+')'});
+    $('k1').textContent=Math.round(12480*bp).toLocaleString();$('k2').textContent=Math.round(3260*bp).toLocaleString();$('k3').textContent=(99.9*bp).toFixed(1)+'%';
+    // phone frame
+    var fp=ease(seg(p,.14,.30));$('frameR').style.strokeDashoffset=1-fp;
+    scr.style.opacity=seg(p,.26,.34);
+    // pieces fly in
+    pcs.forEach(function(el,i){var k=ease(seg(p,.30+i*.03,.42+i*.03)),f=from[i];
+      el.style.opacity=k;el.style.transform='translate('+f[0]*(1-k)+'px,'+f[1]*(1-k)+'px) rotate('+f[2]*(1-k)+'deg) scale('+(.7+.3*k)+')'});
+    // brands cycle
+    brand(p<.58?0:p<.66?1:p<.74?2:3);
+    // real sites scrolling in the laptop
+    var sp=seg(p,.48,.54),site=$('lsite');site.style.opacity=sp;
+    var map=[0,1,0,3],k=map[curB],U=['getsudgo.com','margenos.com','getsudgo.com','comethroughmedia.com'];
+    $('lurl').textContent=sp>.5?U[curB]:'dashboard.lemontholdings.app';
+    var wins=[[.48,.58],[.58,.66],[.66,.74],[.74,.86]][curB],lp2=seg(p,wins[0],wins[1]);
+    [].forEach.call(site.children,function(im){var on=+im.dataset.k===k;im.classList.toggle('on',on);
+      if(on&&im.naturalHeight){var vh2=site.clientHeight,ih=im.clientHeight;im.style.transform='translateY('+(-Math.max(0,ih-vh2)*ease(lp2)*.6)+'px)'}});
+    // live badge
+    var lv=seg(p,.70,.74);$('live').style.transform='scale('+(lv?1+.25*Math.sin(lv*Math.PI):0)+')';
+    // tags
+    ['t1','t2','t3'].forEach(function(id,i){var k=seg(p,.36+i*.05,.42+i*.05)*(1-seg(p,.78,.84));var e=$(id);e.style.opacity=k;e.style.transform='translateY('+(10*(1-k))+'px)'});
+    // phone moves to the side / centre on push
+    var ph=$('ph');
+    if(portrait){ph.style.transform='translateY('+(-160*push)+'px) scale('+(1+.08*push)+')'}
+    else{ph.style.transform='translateX('+(40*push)+'px) scale('+(1+.12*push)+')'}
+    ed.style.opacity=appear*(1-push);lap.style.opacity=lp*(1-push*.85);
+    // final copy
+    var F=$('final');F.style.opacity=fin;F.style.transform='translateY('+(30*(1-fin))+'px)';F.style.pointerEvents=fin>.5?'auto':'none';
   }
-  const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pos,3));pg.setAttribute('color',new THREE.BufferAttribute(col,3));
-  const pts=new THREE.Points(pg,new THREE.PointsMaterial({size:.035,vertexColors:true,transparent:true,opacity:.95,depthWrite:false,blending:THREE.AdditiveBlending}));
-  group.add(pts);
+  var ticking=false;
+  function frame(){ticking=false;var r=film.getBoundingClientRect(),tot=film.offsetHeight-innerHeight;render(reduce?1:c(-r.top/tot))}
+  function req(){if(!ticking){ticking=true;requestAnimationFrame(frame)}}
+  addEventListener('scroll',req,{passive:true});addEventListener('resize',function(){layout();req()});
+  layout();frame();
+})();
+</script>
 
-  // orbit rings
-  const rings=[];
-  [[3.05,0x00E5FF,.5,1.1],[3.4,0x7C4DFF,.35,-.7],[3.75,0xFF3DDB,.22,.45]].forEach(([r,c,o,s],k)=>{
-    const g=new THREE.RingGeometry(r,r+.012,160);
-    const m=new THREE.Mesh(g,new THREE.MeshBasicMaterial({color:c,transparent:true,opacity:o,side:THREE.DoubleSide}));
-    m.rotation.x=Math.PI/2+.35*(k-1);m.rotation.y=.4*k;m.userData.s=s;group.add(m);rings.push(m);
-    // satellite on each ring
-    const sat=new THREE.Mesh(new THREE.SphereGeometry(.06,16,16),new THREE.MeshBasicMaterial({color:c}));
-    sat.userData={r,s,ring:m};m.add(sat);
-  });
-
-  let mx=0,my=0,tx=0,ty=0;
-  let hover=false,speed=1,boost=0;
-  addEventListener('pointermove',e=>{tx=(e.clientX/innerWidth-.5);ty=(e.clientY/innerHeight-.5);const r=canvas.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2,rad=Math.min(r.width,r.height)*.42;hover=Math.hypot(e.clientX-cx,e.clientY-cy)<rad;canvas.style.cursor=hover?'grab':'';});
-  addEventListener('pointerleave',()=>{hover=false;});
-  canvas.addEventListener('touchstart',()=>{hover=true;setTimeout(()=>hover=false,1600);},{passive:true});
-  function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();}
-  new ResizeObserver(resize).observe(canvas);resize();
-  const clock=new THREE.Clock();let t=0;
-  function tick(){
-    const dt=Math.min(clock.getDelta(),.05);speed+=((hover?5:1)-speed)*.06;boost+=((hover?1:0)-boost)*.08;t+=dt*speed;
-    mx+=(tx-mx)*.05;my+=(ty-my)*.05;
-    group.rotation.y=t*.18+mx*.8;group.rotation.x=Math.sin(t*.3)*.15+my*.5;
-    wire.rotation.x=t*.25;wire.rotation.z=t*.12;inner.rotation.y=-t*.4;
-    const s=1+Math.sin(t*1.6)*.03+boost*.12;wire.scale.setScalar(s);inner.scale.setScalar(1+boost*.2);pts.scale.setScalar(1+boost*.06);wire.material.opacity=.85+boost*.15;pts.material.size=.035+boost*.02;
-    pts.rotation.y=-t*.05;
-    rings.forEach(m=>{m.rotation.z=t*m.userData.s*.3;const sat=m.children[0];const a=t*m.userData.s;sat.position.set(Math.cos(a)*sat.userData.r,Math.sin(a)*sat.userData.r,0);});
-    renderer.render(scene,camera);
-    if(!reduce)requestAnimationFrame(tick);
-  }
-  tick();
-}
+<script>
+(function(){
+  var cv=document.getElementById('codebg');if(!cv||!cv.getContext)return;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ctx=cv.getContext('2d'),W,H,dpr=Math.min(devicePixelRatio||1,2),cols=[];
+  var SN=["const app = build({ ios, android, web });","await db.orders.insert(order);","router.post('/book', auth, book);","export default function Checkout() {","if (profit > 0) alert(sku);","stripe.paymentIntents.create({ amount });","map.track(cleaner.location);","deploy --prod --region us-central","fn score(item) -> f64 {","SELECT sku, roi FROM items WHERE roi > .3;","<Button onPress={book}>Book now</Button>","ws.on('eta', updateMap);","git commit -m \"ship it\"","npm run build && npm run test","const ai = await model.answer(q);","useEffect(() => sync(), [user]);","curl -X POST /api/v1/jobs","kubectl rollout status deploy/api","push.send({ to, title: 'On the way' });","return { ok: true, eta: 12 };"];
+  function size(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+    var n=Math.max(3,Math.floor(W/340));cols=[];for(var i=0;i<n;i++)cols.push({x:20+i*(W/n)+Math.random()*30,y:Math.random()*H,v:12+Math.random()*16,lines:[],t:0})}
+  size();addEventListener('resize',size);
+  var last=0,typed={};
+  function draw(ts){var dt=Math.min(.05,(ts-last)/1000||0);last=ts;
+    ctx.clearRect(0,0,W,H);ctx.font='12px ui-monospace,Menlo,Consolas,monospace';ctx.textBaseline='top';
+    var sc=scrollY*.15;
+    cols.forEach(function(c,ci){c.t+=dt;
+      if(!c.lines.length||c.t>1.6){c.t=0;c.lines.unshift({s:SN[Math.floor(Math.random()*SN.length)],n:0});if(c.lines.length>26)c.lines.pop()}
+      c.lines.forEach(function(l,li){l.n=Math.min(l.s.length,l.n+dt*40);
+        var y=((li*22+c.y-sc*(1+ci%2*.5))%(H+60)+H+60)%(H+60)-30,a=Math.max(0,.5-li*.018);
+        ctx.fillStyle=li===0?'rgba(0,229,255,'+(a+.25)+')':(li%5===0?'rgba(124,77,255,'+a+')':'rgba(120,160,255,'+a*.7+')');
+        ctx.fillText(l.s.slice(0,Math.floor(l.n)),c.x,y)})});
+    if(!reduce)requestAnimationFrame(draw)}
+  requestAnimationFrame(draw);
+})();
 </script>
 </body>
 </html>
